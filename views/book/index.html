@@ -7,8 +7,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/css/normalize.css">
 <link rel="stylesheet" href="/css/skeleton.css">
+<link rel="stylesheet" href="/style.css">
 </head>
 <body>
+  <div class="container">
+    <ul>
+      <li><a href="/book">Book</a></li>
+      <li><a href="/author">Author</a></li>
+      <li><a href="/publisher">Publisher</a></li>
+      <li style="float:right"><a class="active" href="/">Home</a></li>
+     </ul>
+    </div>
+
  <div class="container">
   <div class="row">
    <div class="eleven column" style="margin-top: 10%">
@@ -34,7 +44,7 @@
       <td>{{copyright}}</td>
       <td>{{language}}</td>
       <td>{{pages}}</td>
-      <td><a href="publisher/{{author_id}}">{{author}}</a></td>
+      <td><a href="author/{{author_id}}">{{author}}</a></td>
       <td><a href="publisher/{{publisher_id}}">{{publisher}}</a></td>
       </tr>
       {{/books}}

@@ -3,12 +3,8 @@
 class publisher extends Model {
 
   static $publishers = [					
-    ['id'=>1,'publisher'=>'John Wiley & Sons ','country'=>'United States',
-     'founded'=>1807,'genere'=>'Academic','books__book_id'=>[1,2],
-     'books__title'=>['Operating System Concepts','Database System Concepts']], 
-     ['id'=>2,'publisher'=>'Pearson Education','country'=>'United Kingdom',
-     'founded'=>1844,'genere'=>'Education','books__book_id'=>[3,4],
-     'books__title'=>['Computer Networks','Modern Operating Systems']], 
+    ['id'=>1,'publisher'=>'John Wiley & Sons','country'=>'United States','founded'=>1807,'genere'=>'Academic','book'=>[['idb'=>1,'title'=> 'Operating System Concepts'],['idb'=>2,'title'=>'Database System Concepts']]], 
+     ['id'=>2,'publisher'=>'Pearson Education','country'=>'United Kingdom','founded'=>1844,'genere'=>'Education','book'=>[['idb'=>3,'title'=> 'Computer Networks'],['idb'=>4,'title'=>'Modern Operating Systems']]]
   ];
 
   public static function all() { 
@@ -16,8 +12,8 @@ class publisher extends Model {
   }
 
   public static function find($id) {
-    foreach (self::$publishers as $key => $publ)
-      if ($publ['id'] == $id) return $publ;
+    foreach (self::$publishers as $key => $publisher)
+      if ($publisher['id'] == $id) return $publisher;
     return [];
   }
 }
